@@ -1,0 +1,50 @@
+/* Trigger for viewing profile */
+.view-profile-trigger {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: grey; /* Or any color you prefer */
+  opacity: 30%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 16px;
+  border-radius: 20px; /* Rounded edges */
+  padding: 10px 25px;
+}
+
+/* Arrow icon for the trigger */
+.view-profile-trigger::before {
+  content: "^";
+  display: block;
+}
+
+/* Profile container that slides up */
+.profile-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%; /* Center vertically */
+  transform: translateY(100%); /* Start offscreen */
+  margin: auto;
+  width: 90%; /* Adjust the width */
+  max-width: 400px; /* Maximum width */
+  background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent black */
+  color: white;
+  border-radius: 25px; /* Rounded edges */
+  transition: transform 0.5s ease-in-out;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 9;
+}
+
+/* State when the profile is shown */
+.profile-container.show {
+  transform: translateY(-50%); /* Adjust to slide up and center */
+}
